@@ -1,0 +1,21 @@
+<!-- <home-component></home-component> -->
+<!-- <router-outlet></router-outlet> la thanh phan de chen tuy theo cai url la gi -->
+<section>
+    <h1>Welcome to angular application</h1>
+    
+    <!-- can luu y cho nay -->
+    <ul class="nav nav-pills">
+        <!-- khong nen dung the a ma phai dung routerLink
+        <li><a href="/">Home</a></li>
+        <li><a href="/employees">Employee List</a></li> -->
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/employees">Employee List</a></li>
+    </ul>
+</section>
+
+<!-- phan o giua no se tu dong lay -->
+<router-outlet></router-outlet>
+
+<section>
+    Footer Footer
+</section>
