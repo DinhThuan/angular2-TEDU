@@ -1,7 +1,6 @@
 <div class="row">
-    <a [routerLink]="['/employee-add']">Add new</a>
+    <a [routerLink]="['/employee-add']" class="btn btn-success">Add new</a>
 </div>
-
 
 <table class="table">
     <thead>
@@ -25,7 +24,8 @@
                 <!-- dung propery byding -->
                 <!-- truyen vao id theo cu phap nay de xem chi tiet tung san pham -->
                 <a [routerLink]="['/employee-detail',employee.id]">Show Detail</a>
-                <a [routerLink]="['/employee-edit',employee.id]">Edit</a>
+                <a [routerLink]="['/employee-edit',employee.id]" class="btn btn-primary">Edit</a>
+                <button (click)="Delete(employee.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
@@ -37,7 +37,7 @@
               <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li *ngFor="let page of pages"><a [routerLink]="['/employees']" [queryParams]="{pageNumber:page,filter:'a'}" >{{page}}</a></li>
+        <li *ngFor="let page of pages"><a [routerLink]="['/employees']" [queryParams]="{pageNumber:page,filter:'a'}">{{page}}</a></li>
         <li>
             <a href="#" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
