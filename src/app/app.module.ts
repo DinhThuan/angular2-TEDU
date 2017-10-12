@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 // cu thang nao export thi phai cho vao day
 import { appRoutes } from './app.routes';
+import { NotFoundComponent } from './notfound.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         EmployeeListComponent,
-        HomeComponent
+        HomeComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule, FormsModule, HttpModule, appRoutes
