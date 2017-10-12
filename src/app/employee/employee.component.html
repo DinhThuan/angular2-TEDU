@@ -15,6 +15,12 @@
             <td>{{employee.age}}</td>
             <td>{{employee.status}}</td>
             <td>{{employee.createdAt | date }}</td>
+            <!-- xem chi tiet san pham, cua tung thang, nhung phai co id truyen vao -->
+            <td>
+                <!-- dung propery byding -->
+                <!-- truyen vao id theo cu phap nay de xem chi tiet tung san pham -->
+                <a [routerLink]="['/employee-detail',employee.id]">Show Detail</a>
+            </td>
         </tr>
     </tbody>
 </table>

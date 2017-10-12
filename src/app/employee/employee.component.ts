@@ -5,7 +5,8 @@ import { EmployeeService } from '../services/employee.service';
 @Component({
     selector:'employee-list',
     templateUrl:'./employee.component.html',
-    providers:[EmployeeService]
+    // cho vao app.component.ts de dung chung cho tat ca moi file
+    // providers:[EmployeeService]
 })
 export class EmployeeListComponent implements OnInit {
     public employees: any[];

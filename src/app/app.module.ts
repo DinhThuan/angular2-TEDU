@@ -11,18 +11,21 @@ import { HomeComponent } from './home/home.component';
 // cu thang nao export thi phai cho vao day
 import { appRoutes } from './app.routes';
 import { NotFoundComponent } from './notfound.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         EmployeeListComponent,
         HomeComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        EmployeeDetailComponent
     ],
     imports: [
         BrowserModule, FormsModule, HttpModule, appRoutes
     ],
-    providers: [],
+    providers: [EmployeeService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

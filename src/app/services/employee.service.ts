@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class EmployeeService {
-    private apiUrl: string = "http://59c29be588c2c400118df056.mockapi.io/api/api";
+    private apiUrl: string = "http://59c29be588c2c400118df056.mockapi.io/api/api/";
     constructor(
         private _http: Http,
     ) { }
@@ -16,5 +16,8 @@ export class EmployeeService {
         // })
         // cach khac
         return this._http.get(this.apiUrl).map((response: Response) => response.json());
+    }
+    GetSingle(id:number):Observable<any> {
+        return this._http.get(this.apiUrl + id).map((response:Response) => response.json());
     }
 }
