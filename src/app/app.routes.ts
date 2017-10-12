@@ -3,6 +3,8 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeListComponent } from './employee/employee.component';
 import { NotFoundComponent } from './notfound.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeOverviewComponent } from './employee/employee-overview.component';
+import { EmployeeProjectComponent } from './employee/employee-projects.component';
 // routing là tên biến
 // routes la mot kieu mang
 const routing: Routes = [
@@ -14,7 +16,12 @@ const routing: Routes = [
     { path: 'employees', component: EmployeeListComponent },
     // xem chi tiet san pham, truyen vao id cua tung thang
     // ten employee-detail phai giong o ten trong file employee.component.html
-    { path: 'employee-detail/:id', component: EmployeeDetailComponent },
+    {
+        path: 'employee-detail/:id', component: EmployeeDetailComponent, children: [
+            { path: 'overview', component: EmployeeOverviewComponent },
+            { path: 'projects', component: EmployeeProjectComponent },
+        ]
+    },
     { path: '**', component: NotFoundComponent }
 ]
 // truong hop muon sua xong, no tu dong reload lai trang.

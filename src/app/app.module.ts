@@ -13,6 +13,8 @@ import { appRoutes } from './app.routes';
 import { NotFoundComponent } from './notfound.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeService } from './services/employee.service';
+import { EmployeeOverviewComponent } from './employee/employee-overview.component';
+import { EmployeeProjectComponent } from './employee/employee-projects.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { EmployeeService } from './services/employee.service';
         EmployeeListComponent,
         HomeComponent,
         NotFoundComponent,
-        EmployeeDetailComponent
+        EmployeeDetailComponent,
+        EmployeeOverviewComponent,
+        EmployeeProjectComponent
     ],
     imports: [
         BrowserModule, FormsModule, HttpModule, appRoutes
