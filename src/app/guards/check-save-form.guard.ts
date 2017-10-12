@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate } from '@angular/router';
-import { EmployeeDetailComponent } from '../employee-detail/employee-detail.component';
+import { EmployeeDetailComponent } from '../employee/employee-detail.component';
 
 @Injectable()
 export class CheckSaveFormGuard implements CanDeactivate<EmployeeDetailComponent> {

@@ -1,3 +1,8 @@
+<div class="row">
+    <a [routerLink]="['/employee-add']">Add new</a>
+</div>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -20,6 +25,7 @@
                 <!-- dung propery byding -->
                 <!-- truyen vao id theo cu phap nay de xem chi tiet tung san pham -->
                 <a [routerLink]="['/employee-detail',employee.id]">Show Detail</a>
+                <a [routerLink]="['/employee-edit',employee.id]">Edit</a>
             </td>
         </tr>
     </tbody>

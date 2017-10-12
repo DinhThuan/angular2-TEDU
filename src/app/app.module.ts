@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 // cu thang nao export thi phai cho vao day
 import { appRoutes } from './app.routes';
 import { NotFoundComponent } from './notfound.component';
-import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeDetailComponent } from './employee/employee-detail.component';
 import { EmployeeService } from './services/employee.service';
 import { EmployeeOverviewComponent } from './employee/employee-overview.component';
 import { EmployeeProjectComponent } from './employee/employee-projects.component';
@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service';
 import { CheckLoginGuard } from './guards/check-login.guard';
 import { CheckSaveFormGuard } from './guards/check-save-form.guard';
+import { EmployeeEditComponent } from './employee/employee-edit.component';
+import { EmployeeAddComponent } from './employee/employee-add.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,8 @@ import { CheckSaveFormGuard } from './guards/check-save-form.guard';
         EmployeeOverviewComponent,
         EmployeeProjectComponent,
         LoginComponent,
-        
+        EmployeeEditComponent,
+        EmployeeAddComponent
 
     ],
     imports: [

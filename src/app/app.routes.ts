@@ -2,12 +2,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EmployeeListComponent } from './employee/employee.component';
 import { NotFoundComponent } from './notfound.component';
-import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeDetailComponent } from './employee/employee-detail.component';
 import { EmployeeOverviewComponent } from './employee/employee-overview.component';
 import { EmployeeProjectComponent } from './employee/employee-projects.component';
 import { LoginComponent } from './login/login.component';
 import { CheckLoginGuard } from './guards/check-login.guard';
 import { CheckSaveFormGuard } from './guards/check-save-form.guard';
+import { EmployeeEditComponent } from './employee/employee-edit.component';
+import { EmployeeAddComponent } from './employee/employee-add.component';
 
 // routing là tên biến
 // routes la mot kieu mang
@@ -20,6 +22,10 @@ const routing: Routes = [
     // bo cai canActivate:[CheckLoginGuard] de khong can phai login
     // { path: 'employees', component: EmployeeListComponent, canActivate: [CheckLoginGuard] },
     { path: 'employees', component: EmployeeListComponent },
+    // phai truyen vao id thi moi sua duoc
+    { path: 'employee-edit/:id', component: EmployeeEditComponent },
+    // khong can truyen vao id van co the them moi duoc
+    { path: 'employee-add', component: EmployeeAddComponent },
     { path: 'login', component: LoginComponent },
     // xem chi tiet san pham, truyen vao id cua tung thang
     // ten employee-detail phai giong o ten trong file employee.component.html
