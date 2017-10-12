@@ -17,12 +17,16 @@ const routing: Routes = [
     //Trang chu, home component
     { path: '', component: HomeComponent },
     // trang con employees
-    { path: 'employees', component: EmployeeListComponent, canActivate: [CheckLoginGuard] },
+    // bo cai canActivate:[CheckLoginGuard] de khong can phai login
+    // { path: 'employees', component: EmployeeListComponent, canActivate: [CheckLoginGuard] },
+    { path: 'employees', component: EmployeeListComponent },
     { path: 'login', component: LoginComponent },
     // xem chi tiet san pham, truyen vao id cua tung thang
     // ten employee-detail phai giong o ten trong file employee.component.html
     {
-        path: 'employee-detail/:id', component: EmployeeDetailComponent,canDeactivate:[CheckSaveFormGuard],
+        // bo canDeactivate de khong can phai login
+        // path: 'employee-detail/:id', component: EmployeeDetailComponent,canDeactivate:[CheckSaveFormGuard],
+        path: 'employee-detail/:id', component: EmployeeDetailComponent,
         children: [
             { path: '', redirectTo: 'overview', pathMatch: 'full' },
             { path: 'overview', component: EmployeeOverviewComponent },
