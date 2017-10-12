@@ -5,6 +5,10 @@ import { NotFoundComponent } from './notfound.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeOverviewComponent } from './employee/employee-overview.component';
 import { EmployeeProjectComponent } from './employee/employee-projects.component';
+import { LoginComponent } from './login/login.component';
+import { CheckLoginGuard } from './guards/check-login.guard';
+import { CheckSaveFormGuard } from './guards/check-save-form.guard';
+
 // routing là tên biến
 // routes la mot kieu mang
 const routing: Routes = [
@@ -13,11 +17,14 @@ const routing: Routes = [
     //Trang chu, home component
     { path: '', component: HomeComponent },
     // trang con employees
-    { path: 'employees', component: EmployeeListComponent },
+    { path: 'employees', component: EmployeeListComponent, canActivate: [CheckLoginGuard] },
+    { path: 'login', component: LoginComponent },
     // xem chi tiet san pham, truyen vao id cua tung thang
     // ten employee-detail phai giong o ten trong file employee.component.html
     {
-        path: 'employee-detail/:id', component: EmployeeDetailComponent, children: [
+        path: 'employee-detail/:id', component: EmployeeDetailComponent,canDeactivate:[CheckSaveFormGuard],
+        children: [
+            { path: '', redirectTo: 'overview', pathMatch: 'full' },
             { path: 'overview', component: EmployeeOverviewComponent },
             { path: 'projects', component: EmployeeProjectComponent },
         ]
